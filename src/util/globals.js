@@ -1,8 +1,8 @@
-export const PRIMARY_COLOR = "#1D2737";
-export const SECONDARY_COLOR = "#5a6d94";
-export const TERTIARY_COLOR = "#d6d6d6";
-export const HOVERED_COLOR = "#2979ff";
-export const CLICKED_COLOR = "#b71c1c";
+export const PRIMARY_COLOR = "#27374D";
+export const SECONDARY_COLOR = "#526D82";
+export const TERTIARY_COLOR = "#9DB2BF";
+export const HOVERED_COLOR = "#569DAA";
+export const CLICKED_COLOR = "#577D86";
 
 export const METRICS = [
   { label: "Accuracy", value: "acc", key: "acc" },
@@ -14,5 +14,5 @@ export const METRICS = [
   { label: "False Positive Rate", value: "fpr", key: "fpr" },
   { label: "False Discovery Rate", value: "fdr", key: "fdr" },
   { label: "False Omission Rate", value: "for", key: "for" },
-  { label: "F1", value: "f1", key: "f1" }
+  { label: "F1", value: "f1", key: "f1" },
 ];

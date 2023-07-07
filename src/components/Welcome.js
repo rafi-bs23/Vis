@@ -10,75 +10,76 @@ import { PRIMARY_COLOR, TERTIARY_COLOR } from "../util/globals";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 /* Datasets - Add new dataset imports here. */
 import compasData from "../data/compas.csv";
 import adultData from "../data/adult.csv";
-// import censusData from "../data/census.csv";
+import censusData from "../data/census.csv";
+import result from "../data/Result_Visualization.csv";
 
 const styles = {
   body: {
     display: "flex",
-    flexDirection: "inline"
+    flexDirection: "inline",
   },
   content: {
     width: "55%",
     display: "flex",
     flexDirection: "column",
     marginTop: 65,
-    marginLeft: 10
+    marginLeft: 10,
   },
   subtitle: {
     flexGrow: 1,
     color: TERTIARY_COLOR,
-    textAlign: "center"
+    textAlign: "center",
   },
   tagline: {
     flexGrow: 1,
     marginLeft: 30,
     color: TERTIARY_COLOR,
-    textAlign: "left"
+    textAlign: "left",
   },
   loadingScreen: {
     minWidth: "100%",
     minHeight: "calc(100% + 22px)",
     marginTop: -22,
     backgroundColor: PRIMARY_COLOR,
-    margin: "0px auto"
+    margin: "0px auto",
   },
   loadingText: {
     paddingTop: 150,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   loadingProgress: {
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    color: "white"
+    color: "white",
   },
   datasets: {
     width: "600px",
     margin: "0px auto",
-    marginTop: 10
+    marginTop: 10,
   },
   tabletitle: {
     marginTop: 50,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   title: {
-    fontWeight: 800
+    fontWeight: 800,
   },
   adddata: {
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   dataLink: {
     textDecorationColor: "black",
     color: "black",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   socialLink: {
     padding: 10,
@@ -93,26 +94,26 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   social: {
     display: "flex",
     justifyContent: "center",
-    marginTop: 70
+    marginTop: 70,
   },
   icon: {
     fontSize: 16,
-    marginRight: 10
-  }
+    marginRight: 10,
+  },
 };
 
 class Welcome extends Component {
   render() {
     let classes = this.props.classes;
 
-    let loadIcon = <></>
+    let loadIcon = <></>;
     if (this.props.loading) {
-      loadIcon = <CircularProgress />
+      loadIcon = <CircularProgress />;
     }
 
     return (
@@ -122,7 +123,7 @@ class Welcome extends Component {
           color="inherit"
           className={classes.loadingText}
         >
-          <strong>FairVis</strong>{" "}
+          <strong>SIDVis</strong>{" "}
         </Typography>
         <Typography variant="h6" className={classes.subtitle}>
           Audit Classification Models for Intersectional Bias
@@ -144,6 +145,24 @@ class Welcome extends Component {
             <TableBody>
               <TableRow>
                 <TableCell component="th" scope="row">
+                  <a className={classes.dataLink} href="#">
+                    Resilt
+                  </a>
+                </TableCell>
+                <TableCell>Predict income $50K</TableCell>
+                <TableCell>32,562</TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={(_) => this.props.loadData(result)}
+                  >
+                    Select
+                  </Button>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row">
                   <a
                     className={classes.dataLink}
                     href="https://archive.ics.uci.edu/ml/datasets/Adult"
@@ -151,13 +170,13 @@ class Welcome extends Component {
                     UCI Adult
                   </a>
                 </TableCell>
-                <TableCell>Predict income >$50K</TableCell>
+                <TableCell>Predict income $50K</TableCell>
                 <TableCell>32,562</TableCell>
                 <TableCell align="right">
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={_ => this.props.loadData(adultData)}
+                    onClick={(_) => this.props.loadData(adultData)}
                   >
                     Select
                   </Button>
@@ -178,13 +197,13 @@ class Welcome extends Component {
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={_ => this.props.loadData(compasData)}
+                    onClick={(_) => this.props.loadData(compasData)}
                   >
                     Select
                   </Button>
                 </TableCell>
               </TableRow>
-              {/* <TableRow> 
+              <TableRow>
                 <TableCell component="th" scope="row">
                   <a
                     className={classes.dataLink}
@@ -193,22 +212,25 @@ class Welcome extends Component {
                     UCI Census-Income
                   </a>
                 </TableCell>
-                <TableCell>Predict income >$50K</TableCell>
+                <TableCell>Predict income $50K</TableCell>
                 <TableCell>199,523</TableCell>
                 <TableCell align="right">
                   <Button
                     variant="contained"
                     color="primary"
-                    onClick={_ => this.props.loadData(censusData)}
+                    onClick={(_) => this.props.loadData(censusData)}
                   >
                     Select
                   </Button>
                 </TableCell>
-              </TableRow> */}
+              </TableRow>
             </TableBody>
           </Table>
         </Paper>
-        <a href="https://github.com/poloclub/FairVis/blob/master/README.md" className={classes.adddata}>
+        <a
+          href="https://github.com/poloclub/FairVis/blob/master/README.md"
+          className={classes.adddata}
+        >
           <p>Instructions for adding a custom dataset</p>
         </a>
 

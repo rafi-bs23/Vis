@@ -1,0 +1,27 @@
+Models,Feature extraction,Performance,Accuracy,Precision,Recall,AUC of ROC
+BERT,Word embedding,Train,88.48,98.46,87.71,95
+LSTM,Word embedding,Train,99.08,99.14,99.21,100
+BiLSTM,Word embedding,Train,99.01,98.56,99.67,100
+RF,LIWC,Train,99.86,99.87,99.87,100
+SVM,LIWC,Train,87.33,88.39,88.95,87
+GaussianNB,LIWC,Train,76.95,68.57,87.63,78
+LR,LIWC,Train,78.24,78.32,82.06,78
+KNeighbors,LIWC,Train,68.13,47.68,91.36,71
+RF,TF-idf,Train,99.42,99.72,99.24,99
+SVM,TF-idf,Train,95.8,99.21,93.63,95
+GaussianNB,TF-idf,Train,84.05,83.55,87.26,84
+LR,TF-idf,Train,89.25,93.86,87.69,89
+KNeighbors,TF-idf,Train,79.28,98.91,73.24,77
+BERT,Word embedding,Test,88.59,92.34,88.02,95
+LSTM,Word embedding,Test,89.47,87.83,90.95,98
+BiLSTM,Word embedding,Test,87.82,86.06,91.44,95
+RF,LIWC,Test,90,95.6,87.71,89
+SVM,LIWC,Test,87.31,88.36,88.97,87
+GaussianNB,LIWC,Test,76.77,69.69,86.31,78
+LR,LIWC,Test,78.58,78.2,82.73,79
+KNeighbors,LIWC,Test,67.1,46.13,90.76,70
+RF,TF-idf,Test,91.11,95,90.23,90
+SVM,TF-idf,Test,91.33,95.94,89.84,90
+GaussianNB,TF-idf,Test,83.11,82.45,87.75,83
+LR,TF-idf,Test,89.69,93.3,89.42,89
+KNeighbors,TF-idf,Test,81.25,98.96,76.01,78
